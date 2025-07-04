@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  background: linear-gradient(160deg, #000 0%, #111 100%);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  background: #111;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 2px solid #8e2de2;
+  animation: fadeInDown 1s ease-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  color: #8e2de2;
+}
+
+header p {
+  margin: 10px 0 20px;
+  color: #aaa;
+  font-size: 1.2em;
+}
+
+header .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 35px;
+  background: #8e2de2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+header .button:hover {
+  background: #a259ff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #8e2de2;
+}
+
+header .button img {
+  width: 24px;
+  height: 24px;
+}
+
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+section h2 {
+  color: #8e2de2;
+  border-bottom: 2px solid #8e2de2;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 2em;
+}
+
+.accounts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.account {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  flex: 1 1 45%;
+  padding: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 280px;
+}
+
+.account:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #8e2de2;
+}
+
+.account h3 {
+  margin-top: 0;
+  color: #a259ff;
+}
+
+.account ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.account li {
+  margin-bottom: 8px;
+}
+
+.steps {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.8em;
+}
+
+.contact {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 45px;
+  background: #8e2de2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.3em;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact a:hover {
+  background: #a259ff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #8e2de2;
+}
+
+.contact a img {
+  width: 28px;
+  height: 28px;
+}
+
+footer {
+  text-align: center;
+  color: #555;
+  padding: 25px;
+  border-top: 1px solid #333;
+  font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade avançada */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  header .button {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+
+  .accounts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .account {
+    width: 90%;
+  }
+
+  .contact a {
+    font-size: 1.1em;
+    padding: 15px 30px;
+  }
+}
