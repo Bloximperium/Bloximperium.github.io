@@ -1,0 +1,22 @@
+:root {
+  --primary: #8e2de2;
+  --primary-hover: #a259ff;
+  --bg-dark: #111;
+  --text-light: #fff;
+  --text-muted: #aaa;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(160deg, #000 0%, var(--bg-dark) 100%);
+  color: var(--text-light);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: var(--bg-dark);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estrutura mínima para testar */
