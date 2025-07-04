@@ -1,0 +1,168 @@
+:root {
+  --primary: #8e2de2;
+  --primary-hover: #a259ff;
+  --bg-dark: #111;
+  --text-light: #fff;
+  --text-muted: #aaa;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(160deg, #000 0%, var(--bg-dark) 100%);
+  color: var(--text-light);
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--bg-dark);
+  padding: clamp(30px, 5vw, 40px) 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+header p {
+  margin: 1rem 0 1.5rem;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botões */
+.button, .contact a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(12px, 3vw, 15px) clamp(25px, 4vw, 35px);
+  background: var(--primary);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.button:hover, .contact a:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(142, 45, 226, 0.5);
+}
+
+.button img, .contact a img {
+  width: clamp(20px, 3vw, 24px);
+  height: clamp(20px, 3vw, 24px);
+}
+
+/* Seções */
+section {
+  max-width: min(1000px, 90%);
+  margin: clamp(40px, 6vw, 60px) auto;
+  padding: 0 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+section h2 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+/* Cards */
+.accounts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 25px;
+  margin-top: 2.5rem;
+}
+
+.account {
+  background: var(--bg-dark);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: clamp(20px, 3vw, 25px);
+  transition: all 0.3s ease;
+}
+
+.account:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(142, 45, 226, 0.2);
+  border-color: var(--primary);
+}
+
+.account h3 {
+  margin-top: 0;
+  color: var(--primary-hover);
+}
+
+.account ul {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.account li {
+  margin-bottom: 0.5rem;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  color: #555;
+  padding: 2rem;
+  border-top: 1px solid #333;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Acessibilidade */
+:focus-visible {
+  outline: 2px solid var(--primary-hover);
+  outline-offset: 3px;
+}
+
+/* Dark/Light Mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-dark: #f8f9fa;
+    --text-light: #333;
+    --text-muted: #666;
+  }
+  
+  body {
+    background: linear-gradient(160deg, #e9ecef 0%, var(--bg-dark) 100%);
+  }
+  
+  .account, header {
+    background: var(--bg-dark);
+    border-color: #dee2e6;
+  }
+}
