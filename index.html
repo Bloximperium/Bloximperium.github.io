@@ -15,7 +15,7 @@
       <a href="#bloxfruits" class="nav-btn">Blox Fruits</a>
       <a href="#deadrails" class="nav-btn">Dead Rails</a>
       <a href="https://discord.gg/GgKrdyR8" class="button">
-        <img src="discord.png" alt="Discord" class="icon"> Discord
+        Discord
       </a>
     </nav>
   </header>
@@ -24,19 +24,19 @@
     <section id="bloxfruits">
       <h2>Blox Fruits</h2>
       <div class="card" onclick="openModal('bloxfruits')">
-        <h3>Ver Detalhes</h3>
+        <h3>Detalhes</h3>
         <p>Level 700, 1500, 2650 e Personalizada</p>
       </div>
-      <a href="bloxfruits.html" class="button secondary">Página Separada</a>
+      <a href="bloxfruits.html" class="button secondary">Contas Blox Fruits</a>
     </section>
 
     <section id="deadrails">
       <h2>Dead Rails</h2>
       <div class="card" onclick="openModal('deadrails')">
-        <h3>Ver Detalhes</h3>
+        <h3>Detalhes</h3>
         <p>500, 1500, 3000 bonds ou Personalizada</p>
       </div>
-      <a href="deadrails.html" class="button secondary">Página Separada</a>
+      <a href="deadrails.html" class="button secondary">Contas Dead Rails</a>
     </section>
 
     <section>
@@ -47,14 +47,11 @@
          4️⃣ Receba sua conta com segurança!
       </p>
     </section>
-
-    <section>
-      <h2>Contato</h2>
-      <a href="https://discord.gg/GgKrdyR8" class="button neon">
-        Fale Conosco no Discord
-      </a>
-    </section>
   </main>
+
+  <footer id="footer">
+    <p>&copy; 2025 Blox Imperium — Todos os direitos reservados | <a href="https://discord.gg/GgKrdyR8">Discord</a></p>
+  </footer>
 
   <!-- Modal -->
   <div id="modal" class="modal">
@@ -69,21 +66,36 @@
       const modal = document.getElementById("modal");
       const body = document.getElementById("modal-body");
       if(type === "bloxfruits") {
-        body.innerHTML = "<h2>Blox Fruits</h2><p>Conta básica — Level 700<br>Conta intermediária — Level 1500<br>Conta avançada — Level 2650<br>Conta personalizada — Você escolhe!</p><a href='https://discord.gg/GgKrdyR8' class='button'>Comprar</a>";
+        body.innerHTML = "<h2>Blox Fruits</h2><p>Conta básica — Level 700<br>Conta intermediária — Level 1500<br>Conta avançada — Level 2650<br>Conta personalizada — Você escolhe!</p><a href='https://discord.gg/GgKrdyR8' class='button'>Comprar no Discord</a>";
       } else {
-        body.innerHTML = "<h2>Dead Rails</h2><p>Conta Inicial — 500 bonds<br>Conta Avançada — 1500 bonds<br>Conta Premium — 3000 bonds<br>Conta personalizada — Você escolhe!</p><a href='https://discord.gg/GgKrdyR8' class='button'>Comprar</a>";
+        body.innerHTML = "<h2>Dead Rails</h2><p>Conta Inicial — 500 bonds<br>Conta Avançada — 1500 bonds<br>Conta Premium — 3000 bonds<br>Conta personalizada — Você escolhe!</p><a href='https://discord.gg/GgKrdyR8' class='button'>Comprar no Discord</a>";
       }
       modal.style.display = "block";
     }
+
     function closeModal() {
       document.getElementById("modal").style.display = "none";
     }
+
     window.onclick = function(event) {
       const modal = document.getElementById("modal");
       if (event.target == modal) {
         modal.style.display = "none";
       }
-    }
+    };
+
+    // Footer hide on scroll
+    let lastScroll = 0;
+    window.addEventListener("scroll", function() {
+      const currentScroll = window.pageYOffset;
+      const footer = document.getElementById("footer");
+      if (currentScroll > lastScroll) {
+        footer.style.bottom = "-80px"; // sumir
+      } else {
+        footer.style.bottom = "0"; // aparecer
+      }
+      lastScroll = currentScroll;
+    });
   </script>
 </body>
 </html>
