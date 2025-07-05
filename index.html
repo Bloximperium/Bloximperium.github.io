@@ -11,29 +11,32 @@
   <header>
     <h1>Blox Imperium</h1>
     <p class="slogan">As melhores contas do Roblox é aqui!</p>
-    <a href="https://discord.gg/GgKrdyR8" class="button">
-      <img src="discord.png" alt="Discord" class="icon"> Entre no nosso Discord
-    </a>
+    <nav>
+      <a href="#bloxfruits" class="nav-btn">Blox Fruits</a>
+      <a href="#deadrails" class="nav-btn">Dead Rails</a>
+      <a href="https://discord.gg/GgKrdyR8" class="button">
+        <img src="discord.png" alt="Discord" class="icon"> Discord
+      </a>
+    </nav>
   </header>
 
   <main>
-    <section>
-      <h2>Nossas Contas</h2>
-      <h3>Blox Fruits</h3>
-      <ul>
-        <li>Conta básica — Level 700</li>
-        <li>Conta intermediária — Level 1500</li>
-        <li>Conta avançada — Level 2650</li>
-        <li>Conta personalizada — Você decide o que vai vir na conta!</li>
-      </ul>
+    <section id="bloxfruits">
+      <h2>Blox Fruits</h2>
+      <div class="card" onclick="openModal('bloxfruits')">
+        <h3>Ver Detalhes</h3>
+        <p>Level 700, 1500, 2650 e Personalizada</p>
+      </div>
+      <a href="bloxfruits.html" class="button secondary">Página Separada</a>
+    </section>
 
-      <h3>Dead Rails</h3>
-      <ul>
-        <li>Conta Inicial — 500 bonds</li>
-        <li>Conta Avançada — 1500 bonds</li>
-        <li>Conta Premium — 3000 bonds</li>
-        <li>Conta personalizada — Você escolhe a quantidade de bonds!</li>
-      </ul>
+    <section id="deadrails">
+      <h2>Dead Rails</h2>
+      <div class="card" onclick="openModal('deadrails')">
+        <h3>Ver Detalhes</h3>
+        <p>500, 1500, 3000 bonds ou Personalizada</p>
+      </div>
+      <a href="deadrails.html" class="button secondary">Página Separada</a>
     </section>
 
     <section>
@@ -52,5 +55,35 @@
       </a>
     </section>
   </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(type) {
+      const modal = document.getElementById("modal");
+      const body = document.getElementById("modal-body");
+      if(type === "bloxfruits") {
+        body.innerHTML = "<h2>Blox Fruits</h2><p>Conta básica — Level 700<br>Conta intermediária — Level 1500<br>Conta avançada — Level 2650<br>Conta personalizada — Você escolhe!</p><a href='https://discord.gg/GgKrdyR8' class='button'>Comprar</a>";
+      } else {
+        body.innerHTML = "<h2>Dead Rails</h2><p>Conta Inicial — 500 bonds<br>Conta Avançada — 1500 bonds<br>Conta Premium — 3000 bonds<br>Conta personalizada — Você escolhe!</p><a href='https://discord.gg/GgKrdyR8' class='button'>Comprar</a>";
+      }
+      modal.style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
