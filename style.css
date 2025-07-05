@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #000000, #0f0f0f);
+  background: linear-gradient(135deg, #000000, #0a0a0a);
   color: #eee;
   font-family: 'Orbitron', sans-serif;
   text-align: center;
@@ -96,12 +96,6 @@ nav {
 .button:hover {
   box-shadow: 0 0 20px #8e2de2, 0 0 40px #8e2de2, 0 0 60px #8e2de2;
   transform: scale(1.05);
-}
-
-.button img.icon {
-  width: 24px;
-  vertical-align: middle;
-  margin-right: 8px;
 }
 
 /* ======== MAIN ======== */
@@ -203,6 +197,28 @@ li:hover {
 
 .close:hover {
   color: #fff;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  font-size: 0.9em;
+  transition: bottom 0.3s ease;
+}
+
+footer a {
+  color: #8e2de2;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* ======== RESPONSIVO ======== */
